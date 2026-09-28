@@ -27,10 +27,13 @@
 
         /* NAVBAR */
         .navbar {
-            height: 80px;
-            background: #ffffff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-        }
+    background: #ffffff !important;
+    opacity: 1 !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    position: relative;
+    z-index: 1000;
+}
+        
 
         .navbar-brand {
             font-size: 1.25rem;

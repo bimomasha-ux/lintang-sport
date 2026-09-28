@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Pelanggan - Lintang Sport Recovery</title>
@@ -164,31 +165,40 @@
 <body>
 
 <!-- NAVBAR HEADER -->
+ @include('layouts.partials.mobile-sidebar')
 <nav class="navbar navbar-expand-lg sticky-top px-4 navbar-custom">
     <div class="container-fluid p-0">
+         {{-- TOMBOL HAMBURGER MOBILE --}}
+        <button
+            class="btn mobile-menu-btn d-md-none me-2"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#mobileSidebar"
+            aria-controls="mobileSidebar">
+
+            <i class="bi bi-list"></i>
+
+        </button>
+
         <a class="navbar-brand d-flex align-items-center fw-bold text-primary" href="#">
-            <img src="{{ asset('images/logo.png') }}" alt="Logo" width="40" height="40" class="me-2 rounded-circle">
-            <span class="brand-text">Lintang Sport Recovery</span>
+
+        <a class="navbar-brand d-flex align-items-center fw-bold text-primary" href="#">
+            <img src="{{ asset('images/logo.png') }}"
+                 alt="Logo"
+                 width="40"
+                 height="40"
+                 class="me-2 rounded-circle">
+
+            <span class="brand-text">
+                Lintang Sport Recovery
+            </span>
         </a>
 
         <div class="d-flex align-items-center gap-3">
-            <div class="d-flex align-items-center gap-2">
-                <div class="avatar-initial">
-                    A
-                </div>
-                <span class="fw-semibold text-dark">Admin</span>
-            </div>
 
-            <form method="POST" action="{{ route('logout') }}" class="m-0">
-                @csrf
-                <button type="submit" class="btn btn-outline-danger btn-sm rounded-3 px-3">
-                    <i class="bi bi-box-arrow-right me-1"></i> Logout
-                </button>
-            </form>
         </div>
     </div>
 </nav>
-
 <!-- MAIN LAYOUT -->
 <div class="container-fluid">
     <div class="row">

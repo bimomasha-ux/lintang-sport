@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Admin - Lintang Sport Recovery</title>
@@ -155,10 +156,23 @@
     </style>
 </head>
 <body>
-
+@include('layouts.partials.mobile-sidebar')
 <!-- NAVBAR HEADER -->
 <nav class="navbar navbar-expand-lg sticky-top px-4 navbar-custom">
     <div class="container-fluid p-0">
+         {{-- TOMBOL HAMBURGER MOBILE --}}
+        <button
+            class="btn mobile-menu-btn d-md-none me-2"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#mobileSidebar"
+            aria-controls="mobileSidebar">
+
+            <i class="bi bi-list"></i>
+
+        </button>
+
+        <a class="navbar-brand d-flex align-items-center fw-bold text-primary" href="#">
 
         <a class="navbar-brand d-flex align-items-center fw-bold text-primary" href="#">
             <img src="{{ asset('images/logo.png') }}"
@@ -173,37 +187,6 @@
         </a>
 
         <div class="d-flex align-items-center gap-3">
-
-            <!-- PROFIL ADMIN -->
-            <a href="{{ route('profil.index') }}"
-               class="d-flex align-items-center gap-2 text-decoration-none">
-
-                <div class="avatar-initial">
-                    A
-                </div>
-
-                <span class="fw-semibold text-dark">
-                    Admin
-                </span>
-
-            </a>
-
-            <!-- LOGOUT -->
-            <form method="POST"
-                  action="{{ route('logout') }}"
-                  class="m-0">
-
-                @csrf
-
-                <button type="submit"
-                        class="btn btn-outline-danger btn-sm rounded-3 px-3">
-
-                    <i class="bi bi-box-arrow-right me-1"></i>
-                    Logout
-
-                </button>
-
-            </form>
 
         </div>
     </div>

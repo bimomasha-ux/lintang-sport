@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laporan Booking - Lintang Sport Recovery</title>
@@ -190,31 +191,41 @@
     </style>
 </head>
 <body>
-
+@include('layouts.partials.mobile-sidebar')
 <!-- NAVBAR HEADER -->
-<nav class="navbar navbar-custom sticky-top px-4">
+<nav class="navbar navbar-expand-lg sticky-top px-4 navbar-custom">
     <div class="container-fluid p-0">
-        <a class="navbar-brand d-flex align-items-center gap-2 m-0" href="#">
-            <img src="{{ asset('images/logo.png') }}" alt="Logo" width="32" height="32" onerror="this.onerror=null; this.remove();">
-            <span class="brand-text">Lintang Sport Recovery</span>
+         {{-- TOMBOL HAMBURGER MOBILE --}}
+        <button
+            class="btn mobile-menu-btn d-md-none me-2"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#mobileSidebar"
+            aria-controls="mobileSidebar">
+
+            <i class="bi bi-list"></i>
+
+        </button>
+
+        <a class="navbar-brand d-flex align-items-center fw-bold text-primary" href="#">
+
+        <a class="navbar-brand d-flex align-items-center fw-bold text-primary" href="#">
+            <img src="{{ asset('images/logo.png') }}"
+                 alt="Logo"
+                 width="40"
+                 height="40"
+                 class="me-2 rounded-circle">
+
+            <span class="brand-text">
+                Lintang Sport Recovery
+            </span>
         </a>
 
         <div class="d-flex align-items-center gap-3">
-            <div class="d-flex align-items-center gap-2">
-                <div class="avatar-initial">A</div>
-                <span class="fw-bold text-dark d-none d-sm-inline" style="font-size: 0.88rem;">Admin</span>
-            </div>
 
-            <form method="POST" action="{{ route('logout') }}" class="m-0">
-                @csrf
-                <button type="submit" class="btn btn-outline-danger btn-sm px-3 rounded-2 fw-semibold d-flex align-items-center gap-1" style="font-size: 0.82rem;">
-                    <i class="bi bi-box-arrow-right"></i> Logout
-                </button>
-            </form>
         </div>
     </div>
 </nav>
-
 <!-- MAIN LAYOUT -->
 <div class="container-fluid">
     <div class="row">
