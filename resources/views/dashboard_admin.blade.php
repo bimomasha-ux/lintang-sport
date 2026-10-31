@@ -28,19 +28,20 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* NAVBAR HEADER (PRESISI KELOLA LAYANAN) */
-        .navbar-custom {
-            background: #ffffff;
-            height: 70px;
-            border-bottom: 1px solid #e2e8f0;
-        }
+        /* NAVBAR HEADER (PRESISI) */
+.navbar .container,
+.navbar .container-fluid {
+    display: flex !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+}
 
-        .brand-text {
-            color: var(--primary-blue);
-            font-weight: 800;
-            font-size: 1.2rem;
-            letter-spacing: -0.3px;
-        }
+.navbar-brand {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    position: relative !important;
+    left: 0 !important;
+}
 
         /* SIDEBAR STYLING (PRESISI KELOLA LAYANAN) */
         .sidebar {
@@ -174,18 +175,29 @@
 
         <a class="navbar-brand d-flex align-items-center fw-bold text-primary" href="#">
 
-        <a class="navbar-brand d-flex align-items-center fw-bold text-primary" href="#">
-            <img src="{{ asset('images/logo.png') }}"
-                 alt="Logo"
-                 width="40"
-                 height="40"
-                 class="me-2 rounded-circle">
+      {{-- LOGO --}}
+        <a
+            class="navbar-brand d-flex align-items-center fw-bold text-primary"
+            href="{{ route('dashboard.admin') }}">
+
+            
+            <img
+                src="{{ asset('images/logo.png') }}"
+                alt="Logo"
+                width="40"
+                height="40"
+                class="me-2 rounded-circle">
 
             <span class="brand-text">
                 Lintang Sport Recovery
             </span>
-        </a>
 
+        </a>
+            </div>
+
+    </div>
+
+</nav>
         <div class="d-flex align-items-center gap-3">
 
         </div>

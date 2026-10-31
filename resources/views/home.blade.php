@@ -25,18 +25,122 @@
             color: #334155;
         }
 
-        /* NAVBAR */
         .navbar {
-            height: 80px;
-            background: #ffffff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-        }
+    min-height: 80px;
+    height: auto;
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    z-index: 1050;
+}
 
-        .navbar-brand {
-            font-size: 1.25rem;
-            color: var(--primary) !important;
-        }
+.navbar-brand {
+    font-size: 1.25rem;
+    color: var(--primary) !important;
+    white-space: nowrap;
+}
 
+.navbar-toggler {
+    border: 1px solid #dbeafe !important;
+    border-radius: 10px;
+    padding: 7px 10px;
+    background: #ffffff;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.15rem rgba(37, 99, 235, 0.15);
+}
+
+.navbar-collapse {
+    background: #ffffff;
+}
+
+@media (max-width: 991.98px) {
+
+    .navbar {
+        padding: 10px 0;
+    }
+
+    .navbar-brand {
+        font-size: 1rem;
+        max-width: 75%;
+    }
+
+    .navbar-brand img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .navbar-collapse {
+        margin-top: 10px;
+        padding: 12px;
+        border-radius: 14px;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .navbar-nav {
+        width: 100%;
+    }
+
+    .navbar-nav .nav-item {
+        width: 100%;
+    }
+
+    .navbar-nav .nav-link {
+        width: 100%;
+        margin: 2px 0;
+        padding: 10px 12px;
+        border-radius: 8px;
+    }
+
+    .navbar-nav .nav-link:hover {
+        background: #eff6ff;
+    }
+
+    .navbar-actions {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch !important;
+        gap: 10px !important;
+        padding-top: 12px;
+        margin-top: 10px;
+        border-top: 1px solid #e2e8f0;
+    }
+
+    .navbar-actions .btn {
+        width: 100%;
+    }
+
+    /* HERO MOBILE */
+    .hero {
+        padding: 55px 18px 50px;
+        border-radius: 0 0 24px 24px;
+    }
+
+    .hero img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .hero .d-flex {
+        flex-direction: column;
+        gap: 10px !important;
+    }
+
+    .hero .btn {
+        width: 100%;
+    }
+}
         /* HERO SECTION */
         .hero {
             padding: 100px 0 80px;
@@ -137,19 +241,79 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-        <a class="navbar-brand fw-bold d-flex align-items-center" href="/">
-            <img src="{{ asset('images/logo.png') }}" width="40" height="40" class="me-2 rounded-circle" alt="Logo">
+
+        <!-- LOGO -->
+        <a class="navbar-brand fw-bold d-flex align-items-center"
+           href="/">
+
+            <img src="{{ asset('images/logo.png') }}"
+                 width="40"
+                 height="40"
+                 class="me-2 rounded-circle"
+                 alt="Logo">
+
             <span>Lintang Sport Recovery</span>
         </a>
 
-        <div class="ms-auto d-flex gap-2">
-            <a href="/login" class="btn btn-primary btn-modern px-4">
-                Login
-            </a>
-            <a href="/register" class="btn btn-outline-primary btn-modern px-4">
-                Register
-            </a>
+        <!-- TOGGLE MOBILE -->
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <!-- MENU -->
+        <div class="collapse navbar-collapse" id="mainNavbar">
+
+            <!-- MENU KIRI -->
+            <ul class="navbar-nav mx-auto my-2 my-lg-0">
+
+                <li class="nav-item">
+                    <a class="nav-link active"
+                       href="#beranda">
+                        Beranda
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="#tentang">
+                        Tentang Kami
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="#layanan">
+                        Layanan
+                    </a>
+                </li>
+
+            </ul>
+
+            <!-- BUTTON -->
+            <div class="navbar-actions d-flex align-items-center gap-2">
+
+                <a href="/login"
+                   class="btn btn-primary btn-modern px-4">
+                    Login
+                </a>
+
+                <a href="/register"
+                   class="btn btn-outline-primary btn-modern px-4">
+                    Register
+                </a>
+
+            </div>
+
         </div>
+
     </div>
 </nav>
 

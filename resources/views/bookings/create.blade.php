@@ -57,23 +57,28 @@
                     <form action="/bookings" method="POST">
 
                         @csrf
-
-                       <!-- NAMA -->
+<!-- NAMA PELANGGAN -->
 <div class="mb-3">
-    <label class="form-label fw-bold">Nama</label>
+    <label class="form-label fw-bold">Nama Pelanggan</label>
     <input type="text"
+           name="nama"
            class="form-control"
-           value="{{ Auth::user()->name }}"
-           readonly>
+           value="{{ old('nama') }}"
+           placeholder="Masukkan nama pelanggan"
+           autocomplete="off"
+           required>
 </div>
 
-<!-- TELEPON -->
+<!-- NOMOR TELEPON -->
 <div class="mb-4">
     <label class="form-label fw-bold">No. Telepon</label>
     <input type="text"
+           name="telepon"
            class="form-control"
-           value="{{ Auth::user()->telepon }}"
-           readonly>
+           value="{{ old('telepon') }}"
+           placeholder="Masukkan nomor telepon pelanggan"
+           autocomplete="off"
+           required>
 </div>
 
                         <!-- SERVICE -->
